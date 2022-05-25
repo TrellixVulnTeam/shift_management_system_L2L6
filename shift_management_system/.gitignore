@@ -1,0 +1,16 @@
+lib/**/*.js
+bin/**/*.js
+lib/**/*.d.ts
+bin/**/*.d.ts
+!jest.config.js
+node_modules
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+__pycache__
+site-packages
+dist
+.docker-sync
+.env*

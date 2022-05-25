@@ -1,0 +1,20 @@
+version: '2'
+services:
+  shift_management_system:
+    container_name: shift_management_system
+    image: aws-cdk:1.134.0
+    build:
+      context: .
+    volumes:
+      - ./shift_management_system:/work/shift_management_system
+      - ~/.aws/:/root/.aws/
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - node_modules_cdk1.134.0:/work/shift_management_system/node_modules
+    working_dir: /work/shift_management_system
+    network_mode: "host"
+    tty: true
+    stdin_open: true
+    command: /bin/bash --login
+volumes:
+  node_modules_cdk1.134.0:
+    external: true

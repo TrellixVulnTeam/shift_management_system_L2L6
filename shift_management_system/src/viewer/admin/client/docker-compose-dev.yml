@@ -1,0 +1,11 @@
+version: '2'
+
+volumes:
+  sync-viewer-xvyz-admin:
+    external: true
+
+services:
+  app_admin:
+    volumes:
+      - sync-viewer-xvyz-admin:/vuejs_project
+      - ~/.aws/:/root/.aws/

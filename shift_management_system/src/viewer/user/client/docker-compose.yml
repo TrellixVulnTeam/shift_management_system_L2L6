@@ -1,0 +1,16 @@
+version: '2'
+services:
+    app_user:
+      container_name: aicall_user
+      image: vue/cli
+      build:
+        context: .
+      ports:
+          - "9090:8080"
+          - "9091:8000"
+          - "9092:8081"
+      volumes:
+        - ./vuejs_project/:/vuejs_project
+        - ~/.aws/:/root/.aws/
+      working_dir: /vuejs_project/customer_viewer
+      command: vue ui -H 0.0.0.0 -D
